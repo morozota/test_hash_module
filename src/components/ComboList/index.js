@@ -25,7 +25,8 @@ class ComboList extends Component {
     saveCombo(res);
   };
 
-  editCombo = ({ id }) => () => {
+  editCombo = ({ id }) => event => {
+    event.stopPropagation()
     const { editComboHash } = this.props;
     editComboHash(id);
   };
