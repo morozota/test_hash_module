@@ -1,0 +1,9 @@
+{
+  "extends": "plugin:prettier/recommended",
+  "plugins": ["babel", "import", "prettier"],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": 0,
+    "semi": [2, "never"]
+  }
+}

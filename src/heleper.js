@@ -1,7 +1,7 @@
 export const filterHash = word => {
-  const changedWord = word.replace(/#/g, "").replace(/\s+/g, "");
+  const changedWord = word.replace(/#/g, '').replace(/\s+/g, '')
   if (!changedWord) {
-    return false;
+    return false
   }
-  return `#${changedWord}`;
-};
+  return `#${changedWord}`
+}
