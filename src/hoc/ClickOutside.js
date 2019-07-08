@@ -1,26 +1,26 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 
 class ClickOutside extends Component {
   componentDidMount() {
-    document.addEventListener("mousedown", this.handleClickOutside);
+    document.addEventListener('mousedown', this.handleClickOutside)
   }
 
   componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleClickOutside);
+    document.removeEventListener('mousedown', this.handleClickOutside)
   }
   setWrapperRef = node => {
-    this.wrapperRef = node;
-  };
+    this.wrapperRef = node
+  }
   handleClickOutside = event => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.props.editCancel();
+      this.props.editCancel()
     }
-  };
+  }
 
   render() {
-    const { children } = this.props;
-    return <div ref={this.setWrapperRef}>{children}</div>;
+    const { children } = this.props
+    return <div ref={this.setWrapperRef}>{children}</div>
   }
 }
 
-export default ClickOutside;
+export default ClickOutside

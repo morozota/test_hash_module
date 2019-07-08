@@ -1,51 +1,51 @@
-import * as types from "./type";
+import * as types from './type'
 
 //hash
 export const addHash = payload => ({
   type: types.ADDHASH,
-  payload
-});
+  payload,
+})
 
 export const deleteHash = payload => ({
   type: types.DELETEHASH,
-  payload
-});
+  payload,
+})
 
 export const editHash = payload => ({
   type: types.EDITHASH,
-  payload
-});
+  payload,
+})
 
 export const saveHash = payload => ({
   type: types.SAVEHASH,
-  payload
-});
+  payload,
+})
 
 export const editCancel = () => ({
-  type: types.CANCELEDIT
-});
+  type: types.CANCELEDIT,
+})
 
 export const checkHashCancel = () => ({
-  type: types.ALLREADYHASHCANCEL
+  type: types.ALLREADYHASHCANCEL,
 })
 
 //combo hash
 export const addComboHash = payload => ({
   type: types.COMBO + types.ADDHASH,
-  payload
-});
+  payload,
+})
 
 export const editComboHash = payload => ({
   type: types.COMBO + types.EDITHASH,
-  payload
-});
+  payload,
+})
 
 export const saveCombo = payload => ({
   type: types.COMBO + types.SAVEHASH,
-  payload
-});
+  payload,
+})
 
 export const cancelCombo = payload => ({
   type: types.COMBO + types.CANCELEDIT,
-  payload
-});
+  payload,
+})

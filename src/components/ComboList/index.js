@@ -1,51 +1,51 @@
-import React, { Component } from "react";
-import ClickOutside from "../../hoc/ClickOutside";
-import { Menu, List, Icon, Input } from "antd";
+import React, { Component } from 'react'
+import ClickOutside from '../../hoc/ClickOutside'
+import { Menu, List, Icon, Input } from 'antd'
 
 class ComboList extends Component {
   state = {
-    editCombo: ""
-  };
+    editCombo: '',
+  }
 
- editCancel = () => {
-    const { cancelCombo } = this.props;
-    this.setState({ editCombo: "" });
-    cancelCombo();
-  };
+  editCancel = () => {
+    const { cancelCombo } = this.props
+    this.setState({ editCombo: '' })
+    cancelCombo()
+  }
 
   editSave = ({ id }) => event => {
-    event.preventDefault();
-    const { saveCombo } = this.props;
-    const { editCombo } = this.state;
+    event.preventDefault()
+    const { saveCombo } = this.props
+    const { editCombo } = this.state
     const res = {
       id,
-      inputEdit: editCombo
-    };
-    this.setState({ inputEdit: "" });
-    saveCombo(res);
-  };
+      inputEdit: editCombo,
+    }
+    this.setState({ inputEdit: '' })
+    saveCombo(res)
+  }
 
   editCombo = ({ id }) => event => {
     event.stopPropagation()
-    const { editComboHash } = this.props;
-    editComboHash(id);
-  };
+    const { editComboHash } = this.props
+    editComboHash(id)
+  }
 
   handleInput = event => {
-    const { value } = event.target;
+    const { value } = event.target
     this.setState({
-      editCombo: value
-    });
-  };
+      editCombo: value,
+    })
+  }
 
   render() {
     const {
-      comboHash: { combo }
-    } = this.props;
-    const { editCombo } = this.state;
-    const SubMenu = Menu.SubMenu;
+      comboHash: { combo },
+    } = this.props
+    const { editCombo } = this.state
+    const SubMenu = Menu.SubMenu
     return (
-      <div style={{ width: "60%" }}>
+      <div style={{ width: '60%' }}>
         <List
           itemLayout="horizontal"
           dataSource={combo}
@@ -56,27 +56,18 @@ class ComboList extends Component {
                   title={
                     <span
                       style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        width: "400px"
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        width: '400px',
                       }}
                       key={item.id}
                     >
-                      <Icon
-                        type="edit"
-                        theme="filled"
-                        onClick={this.editCombo(item)}
-                        style={{ fontSize: "1.8em" }}
-                      />
+                      <Icon type="edit" theme="filled" onClick={this.editCombo(item)} style={{ fontSize: '1.8em' }} />
                       {item.edit ? (
                         <ClickOutside editCancel={this.editCancel}>
                           <form onSubmit={this.editSave(item)}>
-                            <Input
-                              value={editCombo}
-                              onChange={this.handleInput}
-                              autoFocus
-                            />
+                            <Input value={editCombo} onChange={this.handleInput} autoFocus />
                           </form>
                         </ClickOutside>
                       ) : (
@@ -94,8 +85,8 @@ class ComboList extends Component {
           )}
         />
       </div>
-    );
+    )
   }
 }
 
-export default ComboList;
+export default ComboList
