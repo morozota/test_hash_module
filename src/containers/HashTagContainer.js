@@ -1,5 +1,5 @@
 import HashTagList from '../components/HashTagList'
-import { deleteHash, editHash, saveHash, editCancel } from '../AC'
+import { deleteHash, editHash, saveHash, editCancel } from '../ac'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({ hashReducer: state.hashReducer })

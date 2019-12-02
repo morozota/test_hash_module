@@ -1,4 +1,4 @@
-import * as types from '../../AC/type'
+import * as types from '../../ac/type'
 
 const defaultState = {
   items: [],
