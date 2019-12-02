@@ -1,5 +1,5 @@
 import ComboList from '../components/ComboList'
-import { editComboHash, saveCombo, cancelCombo } from '../AC'
+import { editComboHash, saveCombo, cancelCombo } from '../ac'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => ({

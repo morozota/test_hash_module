@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import TopBar from '../components/TopBar'
-import { addHash, addComboHash, checkHashCancel } from '../AC'
+import { addHash, addComboHash, checkHashCancel } from '../ac'
 
 const mapStateToProps = state => ({
   hashReducer: state.hashReducer,
